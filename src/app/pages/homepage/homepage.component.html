@@ -1,0 +1,23 @@
+<div class="homepage">
+  <div class="anunt" *ngFor="let item of anunturi; index as i">
+    <div class="anuntText" [style.float]="changeTextSide(i)">
+      <div class="textContainer">
+        <div class="titleText">
+          {{ item.titleText }}
+        </div>
+
+        <div class="descriptionText">
+          {{ item.descriptionText }}
+        </div>
+
+        <div class="linkText">
+          {{ item.linkText }}
+        </div>
+      </div>
+    </div>
+
+    <div class="anuntImageContainer" [style.float]="changeImageSide(i)">
+      <img class="anuntImage" [src]="item.url_imagine" />
+    </div>
+  </div>
+</div>

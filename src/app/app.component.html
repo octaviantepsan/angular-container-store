@@ -1,0 +1,20 @@
+<div class="main-content">
+  <nav class="alwaysOnMenu">
+    <div class="navbarTitle">
+      <div class="storeName" (click)="returnToHomepage()" >The Container Store</div>
+    </div>
+
+    <div class="searchBar"></div>
+
+    <div class="navbarSections">
+      <ul class="sections">
+        <li class="section" *ngFor="let section of sections">
+          <a class="sectionLink" href="#" (click)="sendFilter(section.sectionName)">{{ section.sectionName }} </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <app-homepage *ngIf="isHomepageVisible"></app-homepage>
+  <app-productsgrid [selectedSection]="selectedSection" (outputValue)="catchOutputValue($event)" *ngIf="isProductsgridVisible"></app-productsgrid>
+</div>
